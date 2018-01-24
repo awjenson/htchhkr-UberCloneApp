@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182F8337E73F83892A26FF13 /* Pods_htchhkr_development.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A647117AD9C76CB470D6C5F8 /* Pods_htchhkr_development.framework */; };
+		DA42EDF520180B8E00657FA8 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42EDF420180B8E00657FA8 /* GradientView.swift */; };
+		DA42EDF82018189D00657FA8 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42EDF72018189D00657FA8 /* RoundImageView.swift */; };
+		DA42EDFA20181A5B00657FA8 /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42EDF920181A5B00657FA8 /* RoundedShadowView.swift */; };
+		DA42EDFC20181BAD00657FA8 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42EDFB20181BAD00657FA8 /* CircleView.swift */; };
+		DA42EDFE20181F3A00657FA8 /* RoundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42EDFD20181F3A00657FA8 /* RoundedShadowButton.swift */; };
 		DABD3F682017FA500051DE42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABD3F672017FA500051DE42 /* AppDelegate.swift */; };
 		DABD3F6A2017FA500051DE42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABD3F692017FA500051DE42 /* ViewController.swift */; };
 		DABD3F6D2017FA500051DE42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DABD3F6B2017FA500051DE42 /* Main.storyboard */; };
@@ -15,6 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A647117AD9C76CB470D6C5F8 /* Pods_htchhkr_development.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_htchhkr_development.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A89B1F11C5597277E6BE736D /* Pods-htchhkr-development.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-htchhkr-development.debug.xcconfig"; path = "Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development.debug.xcconfig"; sourceTree = "<group>"; };
+		DA42EDF420180B8E00657FA8 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		DA42EDF72018189D00657FA8 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
+		DA42EDF920181A5B00657FA8 /* RoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
+		DA42EDFB20181BAD00657FA8 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		DA42EDFD20181F3A00657FA8 /* RoundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButton.swift; sourceTree = "<group>"; };
 		DABD3F642017FA500051DE42 /* htchhkr-development.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "htchhkr-development.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DABD3F672017FA500051DE42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DABD3F692017FA500051DE42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +35,7 @@
 		DABD3F6E2017FA500051DE42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DABD3F712017FA500051DE42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DABD3F732017FA500051DE42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E48455B7FD800145264AFBAA /* Pods-htchhkr-development.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-htchhkr-development.release.xcconfig"; path = "Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +43,63 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				182F8337E73F83892A26FF13 /* Pods_htchhkr_development.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F396DD89A7FFAC063B4A1E8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A89B1F11C5597277E6BE736D /* Pods-htchhkr-development.debug.xcconfig */,
+				E48455B7FD800145264AFBAA /* Pods-htchhkr-development.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		93AEAF7988A7B195C1E816B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A647117AD9C76CB470D6C5F8 /* Pods_htchhkr_development.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA42EDF020180B2F00657FA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DA42EDF120180B3600657FA8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DA42EDF420180B8E00657FA8 /* GradientView.swift */,
+				DA42EDF72018189D00657FA8 /* RoundImageView.swift */,
+				DA42EDF920181A5B00657FA8 /* RoundedShadowView.swift */,
+				DA42EDFB20181BAD00657FA8 /* CircleView.swift */,
+				DA42EDFD20181F3A00657FA8 /* RoundedShadowButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DA42EDF220180B3B00657FA8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		DABD3F5B2017FA500051DE42 = {
 			isa = PBXGroup;
 			children = (
 				DABD3F662017FA500051DE42 /* htchhkr-development */,
 				DABD3F652017FA500051DE42 /* Products */,
+				0F396DD89A7FFAC063B4A1E8 /* Pods */,
+				93AEAF7988A7B195C1E816B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +114,9 @@
 		DABD3F662017FA500051DE42 /* htchhkr-development */ = {
 			isa = PBXGroup;
 			children = (
+				DA42EDF020180B2F00657FA8 /* Model */,
+				DA42EDF120180B3600657FA8 /* View */,
+				DA42EDF220180B3B00657FA8 /* Controller */,
 				DABD3F672017FA500051DE42 /* AppDelegate.swift */,
 				DABD3F692017FA500051DE42 /* ViewController.swift */,
 				DABD3F6B2017FA500051DE42 /* Main.storyboard */,
@@ -71,9 +134,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DABD3F762017FA500051DE42 /* Build configuration list for PBXNativeTarget "htchhkr-development" */;
 			buildPhases = (
+				9EDC12E1F9D450EBE295991A /* [CP] Check Pods Manifest.lock */,
 				DABD3F602017FA500051DE42 /* Sources */,
 				DABD3F612017FA500051DE42 /* Frameworks */,
 				DABD3F622017FA500051DE42 /* Resources */,
+				64ACB04CBF6AED25E03CA1ED /* [CP] Embed Pods Frameworks */,
+				FF8ED68422C256ECBCFB6960 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,13 +197,80 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		64ACB04CBF6AED25E03CA1ED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealingSplashView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EDC12E1F9D450EBE295991A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-htchhkr-development-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF8ED68422C256ECBCFB6960 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DABD3F602017FA500051DE42 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA42EDFE20181F3A00657FA8 /* RoundedShadowButton.swift in Sources */,
+				DA42EDFC20181BAD00657FA8 /* CircleView.swift in Sources */,
 				DABD3F6A2017FA500051DE42 /* ViewController.swift in Sources */,
+				DA42EDF82018189D00657FA8 /* RoundImageView.swift in Sources */,
+				DA42EDFA20181A5B00657FA8 /* RoundedShadowView.swift in Sources */,
 				DABD3F682017FA500051DE42 /* AppDelegate.swift in Sources */,
+				DA42EDF520180B8E00657FA8 /* GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +405,7 @@
 		};
 		DABD3F772017FA500051DE42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A89B1F11C5597277E6BE736D /* Pods-htchhkr-development.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +421,7 @@
 		};
 		DABD3F782017FA500051DE42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E48455B7FD800145264AFBAA /* Pods-htchhkr-development.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
