@@ -13,9 +13,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    // When we launch, we need to start with the containerVC and then fill in that VC with the HomeVC
+    fileprivate var containerVC = ContainerVC()
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        containerVC = ContainerVC()
+        window?.rootViewController = containerVC
+        window?.makeKeyAndVisible()
+
         return true
     }
 

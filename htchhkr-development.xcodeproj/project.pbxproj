@@ -13,8 +13,13 @@
 		DA42EDFA20181A5B00657FA8 /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42EDF920181A5B00657FA8 /* RoundedShadowView.swift */; };
 		DA42EDFC20181BAD00657FA8 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42EDFB20181BAD00657FA8 /* CircleView.swift */; };
 		DA42EDFE20181F3A00657FA8 /* RoundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42EDFD20181F3A00657FA8 /* RoundedShadowButton.swift */; };
+		DA42EE002019548E00657FA8 /* LeftSidePanelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42EDFF2019548E00657FA8 /* LeftSidePanelVC.swift */; };
+		DA42EE022019551A00657FA8 /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42EE012019551A00657FA8 /* ContainerVC.swift */; };
+		DA42EE0520195ECE00657FA8 /* CenterVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42EE0420195ECE00657FA8 /* CenterVCDelegate.swift */; };
+		DA7D58C0201F77040011E04F /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D58BF201F77040011E04F /* UIViewExt.swift */; };
+		DA7D58C220203BB80011E04F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D58C120203BB80011E04F /* LoginVC.swift */; };
 		DABD3F682017FA500051DE42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABD3F672017FA500051DE42 /* AppDelegate.swift */; };
-		DABD3F6A2017FA500051DE42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABD3F692017FA500051DE42 /* ViewController.swift */; };
+		DABD3F6A2017FA500051DE42 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABD3F692017FA500051DE42 /* HomeVC.swift */; };
 		DABD3F6D2017FA500051DE42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DABD3F6B2017FA500051DE42 /* Main.storyboard */; };
 		DABD3F6F2017FA500051DE42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DABD3F6E2017FA500051DE42 /* Assets.xcassets */; };
 		DABD3F722017FA500051DE42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DABD3F702017FA500051DE42 /* LaunchScreen.storyboard */; };
@@ -28,9 +33,14 @@
 		DA42EDF920181A5B00657FA8 /* RoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
 		DA42EDFB20181BAD00657FA8 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		DA42EDFD20181F3A00657FA8 /* RoundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowButton.swift; sourceTree = "<group>"; };
+		DA42EDFF2019548E00657FA8 /* LeftSidePanelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSidePanelVC.swift; sourceTree = "<group>"; };
+		DA42EE012019551A00657FA8 /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
+		DA42EE0420195ECE00657FA8 /* CenterVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterVCDelegate.swift; sourceTree = "<group>"; };
+		DA7D58BF201F77040011E04F /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		DA7D58C120203BB80011E04F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		DABD3F642017FA500051DE42 /* htchhkr-development.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "htchhkr-development.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DABD3F672017FA500051DE42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DABD3F692017FA500051DE42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DABD3F692017FA500051DE42 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		DABD3F6C2017FA500051DE42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DABD3F6E2017FA500051DE42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DABD3F712017FA500051DE42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -89,8 +99,28 @@
 		DA42EDF220180B3B00657FA8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DABD3F692017FA500051DE42 /* HomeVC.swift */,
+				DA42EDFF2019548E00657FA8 /* LeftSidePanelVC.swift */,
+				DA42EE012019551A00657FA8 /* ContainerVC.swift */,
+				DA7D58C120203BB80011E04F /* LoginVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		DA42EE0320195EA400657FA8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DA42EE0420195ECE00657FA8 /* CenterVCDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		DA7D58BE201F76EB0011E04F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DA7D58BF201F77040011E04F /* UIViewExt.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		DABD3F5B2017FA500051DE42 = {
@@ -114,11 +144,12 @@
 		DABD3F662017FA500051DE42 /* htchhkr-development */ = {
 			isa = PBXGroup;
 			children = (
+				DA7D58BE201F76EB0011E04F /* Extensions */,
+				DA42EE0320195EA400657FA8 /* Protocols */,
 				DA42EDF020180B2F00657FA8 /* Model */,
 				DA42EDF120180B3600657FA8 /* View */,
 				DA42EDF220180B3B00657FA8 /* Controller */,
 				DABD3F672017FA500051DE42 /* AppDelegate.swift */,
-				DABD3F692017FA500051DE42 /* ViewController.swift */,
 				DABD3F6B2017FA500051DE42 /* Main.storyboard */,
 				DABD3F6E2017FA500051DE42 /* Assets.xcassets */,
 				DABD3F702017FA500051DE42 /* LaunchScreen.storyboard */,
@@ -264,9 +295,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA42EE0520195ECE00657FA8 /* CenterVCDelegate.swift in Sources */,
 				DA42EDFE20181F3A00657FA8 /* RoundedShadowButton.swift in Sources */,
+				DA7D58C220203BB80011E04F /* LoginVC.swift in Sources */,
+				DA42EE002019548E00657FA8 /* LeftSidePanelVC.swift in Sources */,
 				DA42EDFC20181BAD00657FA8 /* CircleView.swift in Sources */,
-				DABD3F6A2017FA500051DE42 /* ViewController.swift in Sources */,
+				DA42EE022019551A00657FA8 /* ContainerVC.swift in Sources */,
+				DA7D58C0201F77040011E04F /* UIViewExt.swift in Sources */,
+				DABD3F6A2017FA500051DE42 /* HomeVC.swift in Sources */,
 				DA42EDF82018189D00657FA8 /* RoundImageView.swift in Sources */,
 				DA42EDFA20181A5B00657FA8 /* RoundedShadowView.swift in Sources */,
 				DABD3F682017FA500051DE42 /* AppDelegate.swift in Sources */,
