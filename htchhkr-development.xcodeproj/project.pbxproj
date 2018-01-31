@@ -19,6 +19,8 @@
 		DA7D58C0201F77040011E04F /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D58BF201F77040011E04F /* UIViewExt.swift */; };
 		DA7D58C220203BB80011E04F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D58C120203BB80011E04F /* LoginVC.swift */; };
 		DA7D58C42020BDDD0011E04F /* RoundedCornerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D58C32020BDDD0011E04F /* RoundedCornerTextField.swift */; };
+		DA7D58C620218BB90011E04F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA7D58C520218BB90011E04F /* GoogleService-Info.plist */; };
+		DA7D58C920218DCF0011E04F /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D58C820218DCF0011E04F /* DataService.swift */; };
 		DABD3F682017FA500051DE42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABD3F672017FA500051DE42 /* AppDelegate.swift */; };
 		DABD3F6A2017FA500051DE42 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABD3F692017FA500051DE42 /* HomeVC.swift */; };
 		DABD3F6D2017FA500051DE42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DABD3F6B2017FA500051DE42 /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 		DA7D58BF201F77040011E04F /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		DA7D58C120203BB80011E04F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		DA7D58C32020BDDD0011E04F /* RoundedCornerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerTextField.swift; sourceTree = "<group>"; };
+		DA7D58C520218BB90011E04F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		DA7D58C820218DCF0011E04F /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		DABD3F642017FA500051DE42 /* htchhkr-development.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "htchhkr-development.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DABD3F672017FA500051DE42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DABD3F692017FA500051DE42 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -126,6 +130,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		DA7D58C720218DBB0011E04F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DA7D58C820218DCF0011E04F /* DataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		DABD3F5B2017FA500051DE42 = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +159,7 @@
 		DABD3F662017FA500051DE42 /* htchhkr-development */ = {
 			isa = PBXGroup;
 			children = (
+				DA7D58C720218DBB0011E04F /* Services */,
 				DA7D58BE201F76EB0011E04F /* Extensions */,
 				DA42EE0320195EA400657FA8 /* Protocols */,
 				DA42EDF020180B2F00657FA8 /* Model */,
@@ -156,6 +169,7 @@
 				DABD3F6B2017FA500051DE42 /* Main.storyboard */,
 				DABD3F6E2017FA500051DE42 /* Assets.xcassets */,
 				DABD3F702017FA500051DE42 /* LaunchScreen.storyboard */,
+				DA7D58C520218BB90011E04F /* GoogleService-Info.plist */,
 				DABD3F732017FA500051DE42 /* Info.plist */,
 			);
 			path = "htchhkr-development";
@@ -224,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DABD3F722017FA500051DE42 /* LaunchScreen.storyboard in Resources */,
+				DA7D58C620218BB90011E04F /* GoogleService-Info.plist in Resources */,
 				DABD3F6F2017FA500051DE42 /* Assets.xcassets in Resources */,
 				DABD3F6D2017FA500051DE42 /* Main.storyboard in Resources */,
 			);
@@ -299,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA42EE0520195ECE00657FA8 /* CenterVCDelegate.swift in Sources */,
+				DA7D58C920218DCF0011E04F /* DataService.swift in Sources */,
 				DA42EDFE20181F3A00657FA8 /* RoundedShadowButton.swift in Sources */,
 				DA7D58C220203BB80011E04F /* LoginVC.swift in Sources */,
 				DA42EE002019548E00657FA8 /* LeftSidePanelVC.swift in Sources */,
