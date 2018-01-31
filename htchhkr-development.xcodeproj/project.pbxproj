@@ -18,6 +18,7 @@
 		DA42EE0520195ECE00657FA8 /* CenterVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42EE0420195ECE00657FA8 /* CenterVCDelegate.swift */; };
 		DA7D58C0201F77040011E04F /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D58BF201F77040011E04F /* UIViewExt.swift */; };
 		DA7D58C220203BB80011E04F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D58C120203BB80011E04F /* LoginVC.swift */; };
+		DA7D58C42020BDDD0011E04F /* RoundedCornerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7D58C32020BDDD0011E04F /* RoundedCornerTextField.swift */; };
 		DABD3F682017FA500051DE42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABD3F672017FA500051DE42 /* AppDelegate.swift */; };
 		DABD3F6A2017FA500051DE42 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABD3F692017FA500051DE42 /* HomeVC.swift */; };
 		DABD3F6D2017FA500051DE42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DABD3F6B2017FA500051DE42 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		DA42EE0420195ECE00657FA8 /* CenterVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterVCDelegate.swift; sourceTree = "<group>"; };
 		DA7D58BF201F77040011E04F /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		DA7D58C120203BB80011E04F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		DA7D58C32020BDDD0011E04F /* RoundedCornerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerTextField.swift; sourceTree = "<group>"; };
 		DABD3F642017FA500051DE42 /* htchhkr-development.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "htchhkr-development.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DABD3F672017FA500051DE42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DABD3F692017FA500051DE42 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				DA42EDF920181A5B00657FA8 /* RoundedShadowView.swift */,
 				DA42EDFB20181BAD00657FA8 /* CircleView.swift */,
 				DA42EDFD20181F3A00657FA8 /* RoundedShadowButton.swift */,
+				DA7D58C32020BDDD0011E04F /* RoundedCornerTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				DABD3F6A2017FA500051DE42 /* HomeVC.swift in Sources */,
 				DA42EDF82018189D00657FA8 /* RoundImageView.swift in Sources */,
 				DA42EDFA20181A5B00657FA8 /* RoundedShadowView.swift in Sources */,
+				DA7D58C42020BDDD0011E04F /* RoundedCornerTextField.swift in Sources */,
 				DABD3F682017FA500051DE42 /* AppDelegate.swift in Sources */,
 				DA42EDF520180B8E00657FA8 /* GradientView.swift in Sources */,
 			);

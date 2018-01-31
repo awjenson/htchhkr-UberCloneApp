@@ -348,6 +348,9 @@
                                                 <constraint firstAttribute="width" constant="30" id="vAn-xB-QZB"/>
                                             </constraints>
                                             <state key="normal" image="cancelBtn"/>
+                                            <connections>
+                                                <action selector="cancelBtnWasPressed:" destination="hvq-zm-lgr" eventType="touchUpInside" id="uUK-hJ-OXQ"/>
+                                            </connections>
                                         </button>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1LC-ZV-y0i">
                                             <rect key="frame" x="37" y="161.5" width="300" height="344"/>
@@ -387,13 +390,13 @@
                                                     </segments>
                                                     <color key="tintColor" red="0.88724005222320557" green="0.36298000812530518" blue="0.15156999230384827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </segmentedControl>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MFF-w1-Spr">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MFF-w1-Spr" customClass="RoundedCornerTextField" customModule="htchhkr_development" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="234" width="300" height="45"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uaJ-Yj-rSY">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uaJ-Yj-rSY" customClass="RoundedCornerTextField" customModule="htchhkr_development" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="299" width="300" height="45"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
