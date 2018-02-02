@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		182F8337E73F83892A26FF13 /* Pods_htchhkr_development.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A647117AD9C76CB470D6C5F8 /* Pods_htchhkr_development.framework */; };
+		DA0BF59F2024B1FF009BFDA9 /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0BF59E2024B1FF009BFDA9 /* UpdateService.swift */; };
 		DA42EDF520180B8E00657FA8 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42EDF420180B8E00657FA8 /* GradientView.swift */; };
 		DA42EDF82018189D00657FA8 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42EDF72018189D00657FA8 /* RoundImageView.swift */; };
 		DA42EDFA20181A5B00657FA8 /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42EDF920181A5B00657FA8 /* RoundedShadowView.swift */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		A647117AD9C76CB470D6C5F8 /* Pods_htchhkr_development.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_htchhkr_development.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A89B1F11C5597277E6BE736D /* Pods-htchhkr-development.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-htchhkr-development.debug.xcconfig"; path = "Pods/Target Support Files/Pods-htchhkr-development/Pods-htchhkr-development.debug.xcconfig"; sourceTree = "<group>"; };
+		DA0BF59E2024B1FF009BFDA9 /* UpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
 		DA42EDF420180B8E00657FA8 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		DA42EDF72018189D00657FA8 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		DA42EDF920181A5B00657FA8 /* RoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				DA7D58C820218DCF0011E04F /* DataService.swift */,
+				DA0BF59E2024B1FF009BFDA9 /* UpdateService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				DA42EE022019551A00657FA8 /* ContainerVC.swift in Sources */,
 				DA7D58C0201F77040011E04F /* UIViewExt.swift in Sources */,
 				DABD3F6A2017FA500051DE42 /* HomeVC.swift in Sources */,
+				DA0BF59F2024B1FF009BFDA9 /* UpdateService.swift in Sources */,
 				DA42EDF82018189D00657FA8 /* RoundImageView.swift in Sources */,
 				DA42EDFA20181A5B00657FA8 /* RoundedShadowView.swift in Sources */,
 				DA7D58C42020BDDD0011E04F /* RoundedCornerTextField.swift in Sources */,
