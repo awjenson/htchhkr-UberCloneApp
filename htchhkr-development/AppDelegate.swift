@@ -17,6 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // When we launch, we need to start with the containerVC and then fill in that VC with the HomeVC
     fileprivate var containerVC = ContainerVC()
 
+    // Creating a public variable for the same thing that we has as a fileprivate variable
+    var MenuContainerVC: ContainerVC {
+        return containerVC
+    }
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -50,6 +55,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+
+    
+    class func getAppDelegate() -> AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
     }
 
 
