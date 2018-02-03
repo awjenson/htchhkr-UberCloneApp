@@ -18,6 +18,8 @@ class HomeVC: UIViewController {
 
     @IBOutlet weak var actionBtn: RoundedShadowButton!
 
+    @IBOutlet weak var centerMapBtn: UIButton!
+    
     var delegate: CenterVCDelegate?
 
     // It can request auth, display user's location
@@ -140,6 +142,7 @@ class HomeVC: UIViewController {
 
     @IBAction func centerMapBtnWasPressed(_ sender: Any) {
         centerMapOnUserLocation()
+        centerMapBtn.fadeTo(alphaValue: 0.0, withDuration: 0.2)
     }
 
 
@@ -173,5 +176,9 @@ extension HomeVC: MKMapViewDelegate {
             return view
         }
         return nil
+    }
+
+    func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
+        centerMapBtn.fadeTo(alphaValue: 1.0, withDuration: 0.2)
     }
 }
