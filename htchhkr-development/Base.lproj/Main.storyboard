@@ -137,7 +137,7 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Where are you going?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mis-f1-MMG">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Where are you going?" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mis-f1-MMG">
                                                                 <rect key="frame" x="30" y="0.0" width="273" height="20"/>
                                                                 <color key="textColor" red="0.22352941176470587" green="0.22352941176470587" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
@@ -231,6 +231,8 @@
                     <connections>
                         <outlet property="actionBtn" destination="7H3-Jg-dXg" id="OLm-qj-LVs"/>
                         <outlet property="centerMapBtn" destination="3Fe-k8-7HI" id="HnS-yr-3ex"/>
+                        <outlet property="destinationCircle" destination="qqR-KY-GdX" id="vMA-4T-Hi2"/>
+                        <outlet property="destinationTextField" destination="mis-f1-MMG" id="BIb-jr-S6H"/>
                         <outlet property="mapView" destination="sjh-ts-jd7" id="9AO-g9-M4C"/>
                     </connections>
                 </viewController>
