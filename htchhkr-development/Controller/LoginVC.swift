@@ -17,8 +17,6 @@ class LoginVC: UIViewController, UITextFieldDelegate, Alertable {
     @IBOutlet weak var passwordField: RoundedCornerTextField!
     
     @IBOutlet weak var authBtn: RoundedShadowButton!
-    
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,9 +66,9 @@ class LoginVC: UIViewController, UITextFieldDelegate, Alertable {
                         if let errorCode = AuthErrorCode(rawValue: error!._code) {
                             switch errorCode {
                             case .wrongPassword:
-                                print("Whoops! Wrong password.")
+                                self.showAlert("Whoops! Wrong password.")
                             default:
-                                print("An unexpected error occured. Please try again.")
+                                self.showAlert("An unexpected error occured. Please try again.")
                             }
                         }
 
@@ -80,9 +78,10 @@ class LoginVC: UIViewController, UITextFieldDelegate, Alertable {
                                 if let errorCode = AuthErrorCode(rawValue: error!._code) {
                                     switch errorCode {
                                     case .invalidEmail:
-                                        print("That is an invalid email. Please try again.")
+                                        self.showAlert("That is an invalid email. Please try again.")
                                     default:
-                                        print("An unexpected error occured. Please try again.")
+                                        self.showAlert("An unexpected error occured. Please try again.")
+                                        
                                     }
                                 }
                             } else {

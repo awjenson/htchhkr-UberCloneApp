@@ -12,7 +12,7 @@ import RevealingSplashView
 import CoreLocation // get user location and connect with MapView
 import Firebase
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController, Alertable {
 
     // MARK: - Outlets
 
@@ -271,9 +271,10 @@ extension HomeVC: MKMapViewDelegate {
         search.start { (response, error) in
             // Check if there is an error, if there is an error
             if error != nil {
-                print("error: \(String(describing: error))")
+                self.showAlert("error: \(String(describing: error))")
+
             } else if response!.mapItems.count == 0 {
-                print("No results from search!")
+                self.showAlert("No results. Please search again for a different location.")
             } else {
                 // if there was at least one result
                 for mapItem in response!.mapItems {
@@ -317,7 +318,8 @@ extension HomeVC: MKMapViewDelegate {
         let directions = MKDirections(request: request)
         directions.calculate { (response, error) in
             guard let response = response else {
-                print("searchMapKitForResultsWithPolyline: \(error.debugDescription)")
+                self.showAlert("An error occured, please try again.")
+                print(error!)
                 return
             }
 
