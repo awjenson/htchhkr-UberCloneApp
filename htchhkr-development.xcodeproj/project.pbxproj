@@ -11,6 +11,8 @@
 		DA0BF59F2024B1FF009BFDA9 /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0BF59E2024B1FF009BFDA9 /* UpdateService.swift */; };
 		DA0BF5A1202537A5009BFDA9 /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0BF5A0202537A5009BFDA9 /* DriverAnnotation.swift */; };
 		DA233831202681EF00FA4292 /* PassengerAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA233830202681EF00FA4292 /* PassengerAnnotation.swift */; };
+		DA23383320279C6B00FA4292 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23383220279C6B00FA4292 /* UIViewControllerExt.swift */; };
+		DA23383520295B3000FA4292 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA23383420295B3000FA4292 /* Alertable.swift */; };
 		DA42EDF520180B8E00657FA8 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42EDF420180B8E00657FA8 /* GradientView.swift */; };
 		DA42EDF82018189D00657FA8 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42EDF72018189D00657FA8 /* RoundImageView.swift */; };
 		DA42EDFA20181A5B00657FA8 /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42EDF920181A5B00657FA8 /* RoundedShadowView.swift */; };
@@ -37,6 +39,8 @@
 		DA0BF59E2024B1FF009BFDA9 /* UpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
 		DA0BF5A0202537A5009BFDA9 /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
 		DA233830202681EF00FA4292 /* PassengerAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengerAnnotation.swift; sourceTree = "<group>"; };
+		DA23383220279C6B00FA4292 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		DA23383420295B3000FA4292 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		DA42EDF420180B8E00657FA8 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		DA42EDF72018189D00657FA8 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		DA42EDF920181A5B00657FA8 /* RoundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				DA42EE0420195ECE00657FA8 /* CenterVCDelegate.swift */,
+				DA23383420295B3000FA4292 /* Alertable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				DA7D58BF201F77040011E04F /* UIViewExt.swift */,
+				DA23383220279C6B00FA4292 /* UIViewControllerExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 			files = (
 				DA42EE0520195ECE00657FA8 /* CenterVCDelegate.swift in Sources */,
 				DA7D58C920218DCF0011E04F /* DataService.swift in Sources */,
+				DA23383320279C6B00FA4292 /* UIViewControllerExt.swift in Sources */,
 				DA42EDFE20181F3A00657FA8 /* RoundedShadowButton.swift in Sources */,
 				DA7D58C220203BB80011E04F /* LoginVC.swift in Sources */,
 				DA42EE002019548E00657FA8 /* LeftSidePanelVC.swift in Sources */,
@@ -332,6 +339,7 @@
 				DA233831202681EF00FA4292 /* PassengerAnnotation.swift in Sources */,
 				DA7D58C0201F77040011E04F /* UIViewExt.swift in Sources */,
 				DA0BF5A1202537A5009BFDA9 /* DriverAnnotation.swift in Sources */,
+				DA23383520295B3000FA4292 /* Alertable.swift in Sources */,
 				DABD3F6A2017FA500051DE42 /* HomeVC.swift in Sources */,
 				DA0BF59F2024B1FF009BFDA9 /* UpdateService.swift in Sources */,
 				DA42EDF82018189D00657FA8 /* RoundImageView.swift in Sources */,

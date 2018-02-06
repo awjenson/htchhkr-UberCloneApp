@@ -27,8 +27,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var destinationCircle: CircleView!
 
     // MARK: - Properties
-
-//    var currentUserId: String?
+    var currentUserId = Auth.auth().currentUser?.uid
 
     var delegate: CenterVCDelegate?
 
@@ -169,6 +168,19 @@ class HomeVC: UIViewController {
     }
 
     @IBAction func centerMapBtnWasPressed(_ sender: Any) {
+
+        DataService.instance.REF_USERS.child(currentUserId!).observeSingleEvent(of: .value, with: { (snapshot) in
+            for child in snapshot.children {
+                print(child)
+            }
+            if snapshot.hasChild("tripCoordinate") {
+                self.zoom(toFitAnnotationsFromMapView: self.mapView)
+            } else {
+                self.centerMapOnUserLocation()
+            }
+            self.centerMapBtn.fadeTo(alphaValue: 0.0, withDuration: 0.2)
+        })
+
         centerMapOnUserLocation()
         centerMapBtn.fadeTo(alphaValue: 0.0, withDuration: 0.2)
     }
@@ -237,6 +249,8 @@ extension HomeVC: MKMapViewDelegate {
         lineRederer.strokeColor = UIColor(red: 216/255, green: 71/255, blue: 30/255, alpha: 0.75)
         lineRederer.lineWidth = 3.0
 
+        zoom(toFitAnnotationsFromMapView: self.mapView)
+
         return lineRederer
     }
 
@@ -266,6 +280,8 @@ extension HomeVC: MKMapViewDelegate {
                     self.matchingItems.append(mapItem as MKMapItem)
                     // reload view with new data
                     self.tableView.reloadData()
+                    // remove the subview with the spinner
+                    self.shouoldPresentLoadingView(false)
                 }
             }
         }
@@ -301,7 +317,7 @@ extension HomeVC: MKMapViewDelegate {
         let directions = MKDirections(request: request)
         directions.calculate { (response, error) in
             guard let response = response else {
-                print(error.debugDescription)
+                print("searchMapKitForResultsWithPolyline: \(error.debugDescription)")
                 return
             }
 
@@ -311,8 +327,48 @@ extension HomeVC: MKMapViewDelegate {
 
             // add a polyline to display the route on the map
             self.mapView.add(self.route.polyline)
+
+            // fade out spinner (set to: false)
+            self.shouoldPresentLoadingView(false)
+        }
+    }
+
+    func zoom(toFitAnnotationsFromMapView mapView: MKMapView) {
+        // We will call this when we do our search and create our polyline.
+        // Check first if there are any annotations
+
+        if mapView.annotations.count == 0 {
+            return
         }
 
+        // Setup map to only pay attention to what's inside the screen.
+        var topLeftCoordinate = CLLocationCoordinate2D(latitude: -90, longitude: 180)
+        var bottomRightCoordinate = CLLocationCoordinate2D(latitude: 90, longitude: -180)
+
+        // Cycle through all annotations.
+        // Right now, just focus on viewing in mapView the user and destination annotations, ignore the driver annoations.
+        // For every annotation that is not a DriverAnnoation. Only annotations left are Passenger and Destination.
+        for annotation in mapView.annotations where !annotation.isKind(of: DriverAnnotation.self) {
+            // look through all of them except for the ones that are of type driver annoation
+
+            // This will create the perfect rectangle that contains both the user location and destination inside the rectangle.
+            topLeftCoordinate.longitude = fmin(topLeftCoordinate.longitude, annotation.coordinate.longitude)
+            bottomRightCoordinate.latitude = fmax(topLeftCoordinate.latitude, annotation.coordinate.latitude)
+
+            bottomRightCoordinate.longitude = fmax(bottomRightCoordinate.longitude, annotation.coordinate.longitude)
+            bottomRightCoordinate.latitude = fmin(bottomRightCoordinate.latitude, annotation.coordinate.latitude)
+        }
+
+        // Both coordinates are really just averaging the latitude/longitude of the two locations.
+//         var region = MKCoordinateRegion(center: CLLocationCoordinate2DMake((topLeftCoordinate.latitude + bottomRightCoordinate.latitude) * 0.5, (topLeftCoordinate.longitude + bottomRightCoordinate.longitude) * 0.5), span: MKCoordinateSpan(latitudeDelta: fabs(topLeftCoordinate.latitude - bottomRightCoordinate.latitude) * 2.0, longitudeDelta: fabs(bottomRightCoordinate.longitude - topLeftCoordinate.longitude) * 2.0))
+
+        var region = MKCoordinateRegion(center: CLLocationCoordinate2DMake(topLeftCoordinate.latitude - (topLeftCoordinate.latitude - bottomRightCoordinate.latitude) * 0.5, topLeftCoordinate.longitude + (bottomRightCoordinate.longitude - topLeftCoordinate.longitude) * 0.5),
+                                         span: MKCoordinateSpan(latitudeDelta: fabs(topLeftCoordinate.latitude - bottomRightCoordinate.latitude) * 2.0, longitudeDelta: fabs(bottomRightCoordinate.longitude - topLeftCoordinate.longitude) * 2.0))
+
+
+        // Set the region to the mapView
+        region = mapView.regionThatFits(region)
+        mapView.setRegion(region, animated: true)
     }
 }
 
@@ -348,6 +404,8 @@ extension HomeVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == destinationTextField {
              performSearch()
+            // we created 'shouldPresentLoadingView in an extension file
+            shouoldPresentLoadingView(true)
             view.endEditing(true)
         }
         return true
@@ -368,6 +426,25 @@ extension HomeVC: UITextFieldDelegate {
         matchingItems = []
         tableView.reloadData()
         centerMapOnUserLocation()
+
+        // remove all mapKit overlays and annoations from UI and Firebase Database
+
+        // First, Firebase Database
+        DataService.instance.REF_USERS.child(currentUserId!).child("tripCoordinate").removeValue()
+
+        // Second, UI
+        mapView.removeOverlays(mapView.overlays)
+
+        for annotation in mapView.annotations {
+
+            if let annotation = annotation as? MKPointAnnotation {
+                mapView.removeAnnotation(annotation)
+            } else if annotation.isKind(of: PassengerAnnotation.self) {
+                mapView.removeAnnotation(annotation)
+            }
+
+        }
+
         return true
     }
 
@@ -417,6 +494,9 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        shouoldPresentLoadingView(true)
+
         // Whenever we select a search result, we should display a pin for the passenger and where they are going
         let passengerCoordinate = manager?.location?.coordinate
 
@@ -432,6 +512,10 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
 
         // any time we select a map item, it will post a new child called "tripCoordinate" and then save it to Firebase for every user that selects a result.
         DataService.instance.REF_USERS.child((Auth.auth().currentUser?.uid)!).updateChildValues(["tripCoordinate": [selectedMapItem.placemark.coordinate.latitude, selectedMapItem.placemark.coordinate.longitude]])
+
+        print("ANDREW: User Location Coordinate: \(mapView.userLocation.coordinate)")
+
+        print("ANDREW: tripCoordinate: lat \(selectedMapItem.placemark.coordinate.latitude), long \(selectedMapItem.placemark.coordinate.longitude)")
 
         // Drop a pin of selected Address location.
         dropPinFor(placemark: selectedMapItem.placemark)
