@@ -83,6 +83,61 @@ class HomeVC: UIViewController, Alertable {
         revealingSplashView.animationType = SplashAnimationType.heartBeat
         revealingSplashView.startAnimation()
         revealingSplashView.heartAttack = true
+
+        UpdateService.instance.observeTrips { (tripDict) in
+            if let tripDict = tripDict {
+                let pickupCoordinateArray = tripDict["pickupCoordinate"] as! NSArray
+                let tripKey = tripDict["passengerKey"] as! String
+                let acceptanceStatus = tripDict["tripIsAccepted"] as! Bool
+
+                if acceptanceStatus == false {
+                    // Check if drivers are avaialble
+                    DataService.instance.driverIsAvailable(key: self.currentUserId!, handler: { (available) in
+                        if let available = available {
+                            // check that value is true
+                            if available == true {
+                                // instanciate a view controller to display a view controller
+                                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                                let pickupVC = storyboard.instantiateViewController(withIdentifier: "PickupVC") as? PickupVC
+
+                                // Before we present it, input the data that will display
+                                pickupVC?.initData(coordinate: CLLocationCoordinate2DMake(pickupCoordinateArray[0] as! CLLocationDegrees, pickupCoordinateArray[1] as! CLLocationDegrees), passengerKey: tripKey)
+                                self.present(pickupVC!, animated: true, completion: nil)
+                            }
+                        }
+                    })
+                    
+                }
+            }
+        }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        DataService.instance.driverIsAvailable(key: self.currentUserId!, handler: { (status) in
+            if status == false {
+                // driver is on a trip
+                DataService.instance.REF_TRIPS.observeSingleEvent(of: .value, with: { (tripSnapshot) in
+                    if let tripSnapshot = tripSnapshot.children.allObjects as? [DataSnapshot] {
+                        for trip in tripSnapshot {
+                            if trip.childSnapshot(forPath: "driverKey").value as? String == self.currentUserId! {
+                                // Create an array that has the value of key "pickupCoordinate" and cast as a NSArray.
+                                let pickupCoordinateArray = trip.childSnapshot(forPath: "pickupCoordinate").value as! NSArray
+
+                                // in order to display a pin on a mapview we need to create a placemark
+                                let pickupCoordinate = CLLocationCoordinate2D(latitude: pickupCoordinateArray[0] as! CLLocationDegrees, longitude: pickupCoordinateArray[1] as! CLLocationDegrees)
+                                // With this placemark we can now drip a pin of our location and generate a route on the mapview from where the driver is to the passenger
+                                let pickupPlacemark = MKPlacemark(coordinate: pickupCoordinate)
+                                // create a MKMapItem within function
+                                self.searchMapKitForResultsWithPolyline(forMapItem: MKMapItem(placemark: pickupPlacemark))
+
+                            }
+                        }
+                    }
+                })
+            }
+        })
     }
 
     func checkLocationAuthStatus() {
@@ -158,8 +213,13 @@ class HomeVC: UIViewController, Alertable {
     }
 
     @IBAction func actionBtnWasPressed(_ sender: Any) {
-
+        UpdateService.instance.updateTripsWithCoordinatesUponRequest()
         actionBtn.animateButton(shouldLoad: true, withMessage: nil)
+
+        self.view.endEditing(true)
+        destinationTextField.isUserInteractionEnabled = false
+
+        
     }
 
     @IBAction func menuButtonWasPressed(_ sender: UIButton) {
@@ -249,6 +309,9 @@ extension HomeVC: MKMapViewDelegate {
         lineRederer.strokeColor = UIColor(red: 216/255, green: 71/255, blue: 30/255, alpha: 0.75)
         lineRederer.lineWidth = 3.0
 
+        // Whenever the map creates an overlay, dismiss loading view if it is there
+        shouoldPresentLoadingView(false)
+
         zoom(toFitAnnotationsFromMapView: self.mapView)
 
         return lineRederer
@@ -329,6 +392,13 @@ extension HomeVC: MKMapViewDelegate {
 
             // add a polyline to display the route on the map
             self.mapView.add(self.route.polyline)
+
+            // create a constant equal to our AppDelegate
+            let delegate = AppDelegate.getAppDelegate()
+
+            // Go into the delegate, access the window and then on the window we can get to the root view controller. As soon as we have the root view controller, we can set it to false to hide it.
+            delegate.window?.rootViewController?.shouoldPresentLoadingView(false)
+
 
             // fade out spinner (set to: false)
             self.shouoldPresentLoadingView(false)
